@@ -88,6 +88,12 @@
         )
   (c-set-offset 'substatement-open 0))
 
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/php-extras"))
+;; php-mode is already loaded at this point
+;(eval-after-load 'php-mode
+(require 'php-extras)
+;)
+
 (setq flycheck-phpcs-standard "PSR2")
 
 (add-hook 'php-mode-hook (lambda ()

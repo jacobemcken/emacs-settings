@@ -16,7 +16,7 @@
 (require 'package)
 
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
@@ -28,6 +28,7 @@
   '(
     cider
     clojure-mode
+    expand-region
     flycheck
     flycheck-clojure
     flycheck-tip
@@ -69,6 +70,9 @@
 
 ; Make sure that Emacs doesn't leave ~-files all over
 (setq backup-directory-alist (list (cons ".*" (expand-file-name "~/.emacsbackup/"))))
+
+(require 'expand-region)
+(global-set-key (kbd "M-2") 'er/expand-region)
 
 ;; http://www.flycheck.org/manual/latest/index.html
 (require 'flycheck)
@@ -183,4 +187,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (cider clojure-mode flycheck flycheck-clojure flycheck-tip flyspell-lazy flyspell-popup json-mode less-css-mode magit multiple-cursors php-mode zenburn-theme))))
+    (cider clojure-mode expand-region flycheck flycheck-clojure flycheck-tip flyspell-lazy flyspell-popup json-mode less-css-mode magit multiple-cursors php-mode zenburn-theme))))

@@ -12,10 +12,44 @@
 (tool-bar-mode -1)
 (setq inhibit-startup-screen t)
 
+;;;; Package setup
 (require 'package)
-(add-to-list 'package-archives
-             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
 (package-initialize)
+
+(defvar package-list
+  '(
+    cider
+    clojure-mode
+    flycheck
+    flycheck-clojure
+    flycheck-tip
+    flyspell-lazy
+    flyspell-popup
+    json-mode
+    less-css-mode
+    magit
+    multiple-cursors
+    php-mode
+    zenburn-theme
+    ))
+
+;; Fetch the list of packages available
+(or (file-exists-p package-user-dir) (package-refresh-contents))
+;(unless package-archive-contents
+;  (package-refresh-contents))
+
+;; Install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
 
 (load-theme 'zenburn t)
 
@@ -108,16 +142,6 @@
                            ))
 
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (expand-region flycheck flycheck-clojure flycheck-tip php-mode zenburn-theme multiple-cursors magit less-css-mode json-mode flyspell-popup flyspell-lazy cider))))
-
-
 (setq cider-repl-history-file "~/.cider-history")
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 
@@ -152,3 +176,11 @@
  )
 
 ;;; init.el ends here
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (cider clojure-mode flycheck flycheck-clojure flycheck-tip flyspell-lazy flyspell-popup json-mode less-css-mode magit multiple-cursors php-mode zenburn-theme))))

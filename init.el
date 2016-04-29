@@ -97,9 +97,6 @@
                             '(("\t" 0 'trailing-whitespace prepend)))
                            ))
 
-;(add-hook 'php-mode-hook 'php-indent-settings)
-;(add-hook 'php-mode-hook 'eldoc-mode)
-
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

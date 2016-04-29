@@ -58,6 +58,10 @@
 ; Magit
 (global-set-key [f2] 'magit-status)
 
+;; Enable expand-region on key binding where it would have been
+;; had it been a UK keyboard (C-=)
+(global-set-key [C-dead-acute] 'er/expand-region)
+
 ; Makes it possible to tab through windows (instead of using C-x o)
 (global-set-key [C-tab] 'other-window)
 
@@ -105,7 +109,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (flycheck flycheck-clojure flycheck-tip php-mode zenburn-theme multiple-cursors magit less-css-mode json-mode flyspell-popup flyspell-lazy cider))))
+    (expand-region flycheck flycheck-clojure flycheck-tip php-mode zenburn-theme multiple-cursors magit less-css-mode json-mode flyspell-popup flyspell-lazy cider))))
 
 
 (setq cider-repl-history-file "~/.cider-history")

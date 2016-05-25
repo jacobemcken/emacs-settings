@@ -96,6 +96,7 @@
 
 ; Magit
 (global-set-key [f2] 'magit-status)
+(global-set-key [f4] 'magit-blame)
 
 ;; Enable expand-region on key binding where it would have been
 ;; had it been a UK keyboard (C-=)

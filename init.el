@@ -37,6 +37,7 @@
     json-mode
     less-css-mode
     magit
+    markdown-mode
     multiple-cursors
     php-mode
     zenburn-theme
@@ -187,4 +188,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (cider clojure-mode expand-region flycheck flycheck-clojure flycheck-tip flyspell-lazy flyspell-popup json-mode less-css-mode magit multiple-cursors php-mode zenburn-theme))))
+    (markdown-mode cider clojure-mode expand-region flycheck flycheck-clojure flycheck-tip flyspell-lazy flyspell-popup json-mode less-css-mode magit multiple-cursors php-mode zenburn-theme))))

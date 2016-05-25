@@ -149,7 +149,7 @@
 
 
 (setq cider-repl-history-file "~/.cider-history")
-(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+(add-hook 'cider-mode-hook 'eldoc-mode)
 
 (setq nrepl-hide-special-buffers t)
 

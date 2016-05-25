@@ -88,9 +88,9 @@
          ("\\.js$" . js-mode)
          ("\\.json$" . js-mode)
          ("\\.clj$" . clojure-mode)
-         ("\\.cljs$" . clojure-mode)
-         ("\\.cljx$" . clojure-mode)
-         ("\\.edn$" . clojure-mode))
+         ("\\.cljs$" . clojurescript-mode)
+         ("\\.cljc$" . clojurec-mode)
+         ("\\.edn$" . clojurec-mode))
        auto-mode-alist))
 
 ; Magit

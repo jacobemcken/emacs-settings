@@ -55,6 +55,11 @@
 
 (load-theme 'zenburn t)
 
+;; Automcomplete filenames when finding files
+(require 'ido)
+(ido-mode t)
+(setq ido-enable-flex-matching t) ;; enable fuzzy matching
+
 ; show belongin parens / brackets
 (show-paren-mode t)
 
@@ -173,6 +178,8 @@
   (setq ispell-program-name "hunspell")
   (setq ispell-extra-args '("-d en_US")))
  )
+
+(setq tags-case-fold-search nil)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
